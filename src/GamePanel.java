@@ -9,21 +9,23 @@ import javax.swing.Timer;
 
 public class GamePanel extends JPanel implements ActionListener, KeyListener {  
 Timer time;
-GameObject object = new GameObject();
-
+final int MENU_STATE = 0;
+final int GAME_STATE = 1;
+final int END_STATE = 2;
+int currentState;
 @Override
 public void actionPerformed(ActionEvent e) {
-	object.update();
-	repaint();
+	
 }
 GamePanel(){
 	time = new Timer(1000/60, this);
+	int currentState = final int MENU_STATE;
 }
 void startGame(){
 	time.start();
 }
 public void paintComponent(Graphics g){
-	object.draw(g);
+
 }
 @Override
 public void keyTyped(KeyEvent e) {
