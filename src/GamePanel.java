@@ -17,6 +17,7 @@ final int GAME_STATE = 1;
 final int END_STATE = 2;
 int currentState;
 Rocketship ship;
+ObjectManager manager = new ObjectManager();
 @Override
 public void actionPerformed(ActionEvent e) {
 	repaint();
@@ -36,7 +37,8 @@ GamePanel(){
 	 ship = new Rocketship(50, 50);
 		ship.x = 250;
 		ship.y = 700;
-	 
+		
+		manager.addObject(ship); 
 }
 void startGame(){
 	time.start();
@@ -45,7 +47,7 @@ void  updateMenuState(){
 	
 }
 void updateGameState(){
-	ship.update();
+manager.update();
 }
 void updateEndState(){
 	
@@ -61,7 +63,7 @@ void drawMenuState(Graphics g){
 void drawGameState(Graphics g){
 	g.setColor(Color.BLACK);
 	g.fillRect(0, 0, LeagueInvaders.width, LeagueInvaders.height);    
-	ship.draw(g);
+	manager.draw(g);
 
 }
 void drawEndState(Graphics g){
@@ -94,9 +96,32 @@ public void keyPressed(KeyEvent e) {
 			currentState = MENU_STATE;
 		}	
 	}
-	
+	if(e.getKeyCode()==KeyEvent.VK_UP){
+		Rocketship.upkey = true;
+	}
+	if(e.getKeyCode()==KeyEvent.VK_DOWN){
+		Rocketship.downkey = true;
+	}
+	if(e.getKeyCode()==KeyEvent.VK_RIGHT){
+		Rocketship.rightkey = true;
+	}
+	if(e.getKeyCode()==KeyEvent.VK_LEFT){
+		Rocketship.leftkey = true;
+	}
 }
 @Override
 public void keyReleased(KeyEvent e) {
+	if(e.getKeyCode()==KeyEvent.VK_UP){
+		Rocketship.upkey = false;
+	}
+	if(e.getKeyCode()==KeyEvent.VK_DOWN){
+		Rocketship.downkey = false;
+	}
+	if(e.getKeyCode()==KeyEvent.VK_RIGHT){
+		Rocketship.rightkey = false;
+	}
+	if(e.getKeyCode()==KeyEvent.VK_LEFT){
+		Rocketship.leftkey = false;
+	}
 }
 }
