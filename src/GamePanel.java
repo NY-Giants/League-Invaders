@@ -48,6 +48,7 @@ void  updateMenuState(){
 }
 void updateGameState(){
 manager.update();
+manager.manageEnemies();
 }
 void updateEndState(){
 	
@@ -107,6 +108,10 @@ public void keyPressed(KeyEvent e) {
 	}
 	if(e.getKeyCode()==KeyEvent.VK_LEFT){
 		Rocketship.leftkey = true;
+	}
+	if(e.getKeyCode()==KeyEvent.VK_SPACE){
+
+		manager.addObject(new Projectile((ship.x + ship.width/2 -5 ), (ship.y -10), 10, 10));
 	}
 }
 @Override

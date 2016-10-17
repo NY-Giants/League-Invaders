@@ -21,7 +21,7 @@ LeagueInvaders(){
 	frame.setSize(width, height);
 	frame.addKeyListener(gpanel);
 
-	
+
 }
 void setup(){
 	frame.add(gpanel);
