@@ -6,6 +6,8 @@ public class Alien extends GameObject {
 	int xspeed = 10;
 	
 Alien(int x, int y, int width, int height){
+	super();
+	
 	this.x=x;
 	this.width = width;
 	this.height = height;
@@ -24,6 +26,7 @@ void update(){
 		counter = 0;
 		
 	}
+	
 	if(counter == 4){
 	
 		
@@ -31,6 +34,6 @@ void update(){
 		xspeed = -xspeed;
 		
 	}
-	
+	super.update();
 }
 }

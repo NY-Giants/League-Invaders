@@ -49,6 +49,10 @@ void  updateMenuState(){
 void updateGameState(){
 manager.update();
 manager.manageEnemies();
+manager.checkCollision();
+if(!ship.isAlive){
+	currentState = END_STATE;
+}
 }
 void updateEndState(){
 	

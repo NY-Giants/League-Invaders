@@ -12,7 +12,8 @@ static boolean leftkey;
 
 	}
 Rocketship(int x, int y){
-this.x=x;
+	super();
+	this.x=x;
 width = 35;
 height = 35;
 this.y = y;
@@ -23,9 +24,12 @@ rightkey = false;
 leftkey = false;
 }
 void update(){
-if(upkey){
+
+	if(upkey){
 	y--;
+	
 }
+	
 if(downkey){
 	y++;
 }
@@ -35,6 +39,7 @@ if(rightkey){
 if(leftkey){
 	x--;
 }
+super.update();
 }
 void draw(Graphics g){
 	g.setColor(Color.BLUE);
