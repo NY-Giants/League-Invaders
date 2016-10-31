@@ -17,7 +17,7 @@ Rocketship(int x, int y){
 width = 35;
 height = 35;
 this.y = y;
-speed = 400;
+speed = 2;
 upkey = false;
 downkey = false;
 rightkey = false;
@@ -42,8 +42,7 @@ if(leftkey){
 super.update();
 }
 void draw(Graphics g){
-	g.setColor(Color.BLUE);
-	g.fillRect(x, y, width, height);
+	g.drawImage(GamePanel.rocketImg, x, y, width, height, null);
 	
 }
 }

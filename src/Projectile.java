@@ -11,7 +11,7 @@ Projectile(int x, int y, int width, int height){
 	this.width = width;
 	this.height = height;
 	this.y = y;	
-	speed = 10;
+	speed = 50;
 	
 }
 void update(){
@@ -22,7 +22,7 @@ void update(){
 	super.update();
 }
 void draw(Graphics g){
-	g.setColor(Color.RED);
-	g.fillRect(x, y, width, height);
+	g.drawImage(GamePanel.bulletImg, x, y, width, height, null);
+
 }
 }

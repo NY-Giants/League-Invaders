@@ -25,6 +25,7 @@ LeagueInvaders(){
 }
 void setup(){
 	frame.add(gpanel);
+	
 	frame.setDefaultCloseOperation(frame.EXIT_ON_CLOSE);
 	gpanel.startGame();
 }
