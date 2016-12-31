@@ -7,7 +7,10 @@ public static void main(String[] args) {
 
 }
 	RunnerClass(){
-		
+			frame = new JFrame();
+			frame.setVisible(true);
+			frame.setSize(width, height);
+			
 	}
 	void setup(){
 		frame.setDefaultCloseOperation(frame.EXIT_ON_CLOSE);
