@@ -9,13 +9,14 @@ public class LeagueInvaders {
 JFrame frame;
 static final int width = 500;
 static final int height = 800;
-GamePanel gpanel = new GamePanel();
+GamePanel gpanel;
 	public static void main(String[] args) {
 		LeagueInvaders invaders = new LeagueInvaders();
 			invaders.setup();
 		
 	}
 LeagueInvaders(){
+	gpanel = new GamePanel();
 	frame = new JFrame();
 	frame.setVisible(true);
 	frame.setSize(width, height);
